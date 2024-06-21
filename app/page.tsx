@@ -1,19 +1,19 @@
-import { getData } from "@/actions/todoActions";
-import { getUser, getUsers } from "@/actions/userActions";
+import { getUser } from "@/actions/userActions";
 import Todos from "@/components/Todos";
-
-export const revalidate = 10;
+import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {
-  const users = await getUsers();
-  console.log(users);
-  const data = await getData(users[0].id);
-  const user = await getUser(users[0].id);
-  console.log(user);
+  const user: any = await currentUser();
+  // console.log(user);
+  if (!user) return;
+  const fetchData = await getUser(user.id);
+  // console.log(fetchData);
 
   return (
-    <main className="w-full flex justify-center items-center">
-      <Todos todos={data} user={users[0]} />
-    </main>
+    fetchData && (
+      <main className="w-full flex justify-center items-center">
+        <Todos todos={fetchData[0].todos} user={fetchData[0]} />
+      </main>
+    )
   );
 }
