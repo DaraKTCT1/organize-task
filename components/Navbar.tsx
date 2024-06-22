@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className="border-b border-b-gray-200 h-[8vh] w-full flex items-center">
-      <div className="w-full flex px-10 md:px-32 justify-between items-center">
+      <div className="w-full flex px-4 md:px-32 justify-between items-center">
         <Link href="/">
           <h1 className="font-bold text-3xl transparent-text">ORGANIZE</h1>
         </Link>
