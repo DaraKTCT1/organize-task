@@ -1,4 +1,4 @@
-const loading = () => {
+const Loading = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="loader mt-8 md:mt-14">
@@ -9,4 +9,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;
