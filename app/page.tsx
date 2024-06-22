@@ -10,10 +10,8 @@ export default async function Home() {
   // console.log(fetchData);
 
   return (
-    fetchData && (
-      <main className="w-full flex justify-center items-center">
-        <Todos todos={fetchData[0].todos} user={fetchData[0]} />
-      </main>
-    )
+    <main className="w-full flex justify-center items-center">
+      {fetchData && <Todos todos={fetchData[0].todos} user={fetchData[0]} />}
+    </main>
   );
 }

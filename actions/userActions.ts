@@ -2,7 +2,7 @@
 
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 
 export const getUsers = async () => {
   const data = await db.select().from(users);

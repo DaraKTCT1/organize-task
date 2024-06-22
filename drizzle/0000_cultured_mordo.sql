@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"name" text NOT NULL,
 	"email" text NOT NULL,
 	"clerkId" text NOT NULL,
-	"firstName" text NOT NULL,
-	"lastName" text NOT NULL,
+	"firstName" text,
+	"lastName" text,
 	"photo" text NOT NULL,
 	"create_at" timestamp DEFAULT now() NOT NULL,
 	"update_at" timestamp DEFAULT now() NOT NULL
