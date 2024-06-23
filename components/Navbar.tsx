@@ -1,6 +1,6 @@
 "use client";
 
-import { useClerk, SignOutButton, useUser, UserButton } from "@clerk/nextjs";
+import { SignOutButton, useUser, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 const Navbar = () => {

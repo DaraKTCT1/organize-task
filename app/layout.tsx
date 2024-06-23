@@ -17,10 +17,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-           <main>
-              <Navbar />
-              {children}
-           </main>
+          <main className="w-full min-h-screen">
+            <Navbar />
+            {children}
+          </main>
         </body>
       </html>
     </ClerkProvider>
