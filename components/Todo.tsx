@@ -61,7 +61,7 @@ const Todo: FC<Props> = ({
 
   // Rendering the Todo component
   return (
-    <div className="flex items-center gap-2 p-4 border-gray-200 border-solid border rounded-lg">
+    <div className="flex items-center gap-2 p-4 border-gray-200 bg-[#FFFFFF] border-solid border rounded-lg">
       {/* Checkbox for marking the todo as done */}
       <input
         type="checkbox"
@@ -77,7 +77,7 @@ const Todo: FC<Props> = ({
         readOnly={!editing}
         className={`${
           todo.done ? "line-through" : ""
-        } outline-none read-only:border-transparent focus:border border-gray-200 rounded px-2 py-1 w-full`}
+        } outline-none read-only:border-transparent focus:p-3 focus:overflow-x-scroll border border-gray-700 rounded px-2 py-1 w-full`}
       />
       {/* Action buttons for editing, saving, canceling, and deleting */}
       <div className="flex gap-1 ml-auto">

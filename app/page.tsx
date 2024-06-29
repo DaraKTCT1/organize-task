@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Home() {
+  
   return (
     <div className="w-full flex justify-center items-center">
       <div className="max-w-2xl flex flex-col justify-center items-center gap-3 md:gap-7">

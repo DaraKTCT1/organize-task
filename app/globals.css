@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
 .transparent-text {
   background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
   -webkit-text-fill-color: transparent;
@@ -310,5 +313,51 @@
   100% {
     transform: scale(0.75);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.input-container {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  transition: 0.2s linear;
+  border: 2px solid #64748b;
+  font-size: 14px;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover > .icon {
+  animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
   }
 }

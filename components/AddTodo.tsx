@@ -24,7 +24,7 @@ const AddTodo: FC<Props> = ({ createTodo }) => {
       {/* Input field for entering new todo text */}
       <input
         type="text"
-        className="w-full px-2 py-1 border border-gray-200 rounded outline-none"
+        className="w-full px-2 py-1 border-2 border-gray-500 rounded outline-none"
         onChange={handleInput}
         value={input}
       />

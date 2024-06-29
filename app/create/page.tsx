@@ -2,7 +2,12 @@ import { getUser } from "@/actions/userActions";
 import Todos from "@/components/Todos";
 import { currentUser } from "@clerk/nextjs/server";
 
+// interface Props{
+//   searchParams: { [key: string]: string | string[] | undefined };
+// }
+
 const Create = async () => {
+  
   const user: any = await currentUser();
   // console.log(user);
   if (!user) return;
