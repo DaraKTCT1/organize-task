@@ -28,6 +28,8 @@ const Todos: FC<Props> = ({ todos, user }) => {
 
   // Function to create a new todo item
   const createTodo = (text: string) => {
+    if (text === "") return;
+
     const id = new Date().getTime();
     addTodo(id, text, user?.id);
     setTodoItems((prev) => [

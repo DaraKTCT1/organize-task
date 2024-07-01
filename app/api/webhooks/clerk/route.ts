@@ -65,7 +65,7 @@ export async function POST(req: Request) {
       photo: image_url,
       firstName: first_name,
       lastName: last_name,
-      name: username!,
+      name: username,
     };
 
     await addUser(user);

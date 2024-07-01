@@ -7,15 +7,16 @@ import {
   serial,
   timestamp,
   bigint,
+  varchar,
 } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
+  name: varchar("name", { length: 256 }).notNull(),
+  email: varchar("email", { length: 256 }).notNull(),
   clerkId: text("clerkId").notNull(),
-  firstName: text("firstName"),
-  lastName: text("lastName"),
+  firstName: varchar("firstName", { length: 256 }),
+  lastName: varchar("lastName", { length: 256 }),
   photo: text("photo").notNull(),
   createAt: timestamp("create_at").notNull().defaultNow(),
   updateAt: timestamp("update_at").notNull().defaultNow(),

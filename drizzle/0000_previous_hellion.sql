@@ -9,11 +9,11 @@ CREATE TABLE IF NOT EXISTS "todos" (
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "users" (
 	"id" serial PRIMARY KEY NOT NULL,
-	"name" text NOT NULL,
-	"email" text NOT NULL,
+	"name" varchar(256) NOT NULL,
+	"email" varchar(256) NOT NULL,
 	"clerkId" text NOT NULL,
-	"firstName" text,
-	"lastName" text,
+	"firstName" varchar(256),
+	"lastName" varchar(256),
 	"photo" text NOT NULL,
 	"create_at" timestamp DEFAULT now() NOT NULL,
 	"update_at" timestamp DEFAULT now() NOT NULL

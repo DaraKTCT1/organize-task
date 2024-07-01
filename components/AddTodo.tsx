@@ -27,6 +27,10 @@ const AddTodo: FC<Props> = ({ createTodo }) => {
         className="w-full px-2 py-1 border-2 border-gray-500 rounded outline-none"
         onChange={handleInput}
         value={input}
+        required
+        minLength={10}
+        placeholder="Create Task"
+        title="Task must be at least 10 character"
       />
       {/* Button for adding a new todo */}
       <button
