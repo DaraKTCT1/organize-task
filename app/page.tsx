@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
-  
+const Home = () => {
   return (
     <div className="w-full flex justify-center items-center">
       <div className="max-w-2xl flex flex-col justify-center items-center gap-3 md:gap-7">
@@ -15,7 +14,7 @@ export default function Home() {
         </p>
 
         <div className="md:mt-2 py-3 md:py-1">
-          <Link href="/create">
+          <Link prefetch={true} href="/create">
             <button className="btn">
               <strong className="strong-tag">Create Task</strong>
               <div className="container-stars">
@@ -32,4 +31,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

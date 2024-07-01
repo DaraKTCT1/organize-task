@@ -7,16 +7,17 @@ import { currentUser } from "@clerk/nextjs/server";
 // }
 
 const Create = async () => {
-  
   const user: any = await currentUser();
   // console.log(user);
   if (!user) return;
+
   const fetchData = await getUser(user.id);
   // console.log(fetchData);
+  if (!fetchData) return;
 
   return (
     <div className="w-full flex justify-center items-center">
-      {fetchData && <Todos todos={fetchData[0].todos} user={fetchData[0]} />}
+      <Todos todos={fetchData[0].todos} user={fetchData[0]} />
     </div>
   );
 };

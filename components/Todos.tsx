@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import { todoType } from "@/types/todoType ";
 import Todo from "@/components/Todo";
 import AddTodo from "@/components/AddTodo";
@@ -75,8 +75,9 @@ const Todos: FC<Props> = ({ todos, user }) => {
 
   //   router.replace(`${pathName}?${params.toString()}`);
   // };
-  const handleChange = (value: string) => {
-    setQuery(value);
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
   };
 
   // Rendering the Todo List component
@@ -85,9 +86,8 @@ const Todos: FC<Props> = ({ todos, user }) => {
       <div className="py-1 w-full">
         <div className="input-container w-full">
           <input
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleChange(e.target.value)
-            }
+            onChange={handleInputChange}
+            value={query}
             type="text"
             className="input"
             placeholder="Search..."
@@ -149,7 +149,9 @@ const Todos: FC<Props> = ({ todos, user }) => {
       <div className="w-full p-2 md:p-4 rounded-md bg-[#EFEFEF] max-h-[90vh] overflow-y-scroll scroll-hidden flex flex-col mt-4 md:mt-8 gap-2">
         {query
           ? todoItems
-              .filter((todo) => todo.text.includes(query))
+              .filter((todo) =>
+                todo.text.toLowerCase().includes(query.toLowerCase())
+              )
               .map((todo) => (
                 <Todo
                   key={todo.id}
