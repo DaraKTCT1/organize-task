@@ -13,11 +13,11 @@ const Create = async () => {
 
   const fetchData = await getUser(user.id);
   // console.log(fetchData);
-  if (!fetchData) return;
+  // if (!fetchData) return;
 
   return (
     <div className="w-full flex justify-center items-center">
-      <Todos todos={fetchData[0].todos} user={fetchData[0]} />
+      {fetchData && <Todos todos={fetchData[0].todos} user={fetchData[0]} />}
     </div>
   );
 };
