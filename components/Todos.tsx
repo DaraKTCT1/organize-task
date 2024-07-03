@@ -16,7 +16,6 @@ interface Props {
   todos: todoType[];
   user: {
     id: number;
-    name: string;
     email: string;
   };
 }
