@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "todos" (
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "users" (
 	"id" serial PRIMARY KEY NOT NULL,
-	"name" varchar(256) NOT NULL,
+	"name" varchar(256),
 	"email" varchar(256) NOT NULL,
 	"clerkId" text NOT NULL,
 	"firstName" varchar(256),

@@ -12,7 +12,7 @@ import {
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
-  name: varchar("name", { length: 256 }).notNull(),
+  name: varchar("name", { length: 256 }),
   email: varchar("email", { length: 256 }).notNull(),
   clerkId: text("clerkId").notNull(),
   firstName: varchar("firstName", { length: 256 }),
