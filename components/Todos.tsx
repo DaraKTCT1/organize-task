@@ -147,6 +147,8 @@ const Todos: FC<Props> = ({ todos, user }) => {
           </button>
         </div>
       </div>
+      <AddTodo createTodo={createTodo} />
+      {/* Adding Todo component for creating new todos */}
       <div className="w-full p-2 md:p-4 rounded-md bg-[#EFEFEF] max-h-[90vh] overflow-y-scroll scroll-hidden flex flex-col mt-4 md:mt-8 gap-2">
         {query
           ? todoItems
@@ -172,8 +174,6 @@ const Todos: FC<Props> = ({ todos, user }) => {
               />
             ))}
       </div>
-      {/* Adding Todo component for creating new todos */}
-      <AddTodo createTodo={createTodo} />
     </div>
   );
 };
